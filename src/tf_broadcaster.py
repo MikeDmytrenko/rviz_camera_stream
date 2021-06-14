@@ -12,14 +12,15 @@ import turtlesim.msg
 def handle_pose(msg):
     br = tf2_ros.TransformBroadcaster()
     t = geometry_msgs.msg.TransformStamped()
+    
 
     t.header.stamp = rospy.Time.now()
     t.header.frame_id = "map"
     t.child_frame_id = "camera1"
-    t.transform.translation.x = msg.x
-    t.transform.translation.y = msg.y
-    t.transform.translation.z = -100
-    q = tf_conversions.transformations.quaternion_from_euler(0, 0, msg.theta)
+    t.transform.translation.x = msg.linear.x
+    t.transform.translation.y = msg.linear.y
+    t.transform.translation.z = -50.0
+    q = tf_conversions.transformations.quaternion_from_euler(0, 0, 0)
     t.transform.rotation.x = q[0]
     t.transform.rotation.y = q[1]
     t.transform.rotation.z = q[2]
