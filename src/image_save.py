@@ -32,7 +32,6 @@ def image_callback(msg):
         time = msg.header.stamp
         cv2.imwrite('/var/www/html/map.png', cv2_img)
         rospy.sleep(1)
-
 def main():
     rospy.init_node('image_listener')
     # Define your image topic

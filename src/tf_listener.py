@@ -44,7 +44,7 @@ if __name__ == '__main__':
         t.child_frame_id = "camera1"
         t.transform.translation.x = trans.transform.translation.x 
         t.transform.translation.y = trans.transform.translation.y
-        t.transform.translation.z = -50.0
+        t.transform.translation.z = -25.0
         q = tf_conversions.transformations.quaternion_from_euler(0, 0, 0)
         t.transform.rotation.x = q[0]
         t.transform.rotation.y = q[1]
