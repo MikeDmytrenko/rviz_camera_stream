@@ -31,7 +31,7 @@ def image_callback(msg):
         # Save your OpenCV2 image as a jpeg 
         time = msg.header.stamp
         cv2.imwrite('/var/www/html/map.png', cv2_img)
-        rospy.sleep(1)
+        rospy.sleep(0.2)
 def main():
     rospy.init_node('image_listener')
     # Define your image topic
